@@ -2,10 +2,11 @@
 
 use Illuminate\Notifications\Notifiable;
 use Moloquent\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasApiTokens;
 
     protected $dates = ['birthday', 'entry.date'];
     protected static $unguarded = true;

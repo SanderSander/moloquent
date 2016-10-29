@@ -48,6 +48,7 @@ class TestCase extends Orchestra\Testbench\TestCase
         //$app['path.base'] = __DIR__ . '/../src';
 
         $config = require 'config/database.php';
+        $auth = require 'config/auth.php';
 
         $app['config']->set('app.key', 'ZsZewWyUJ5FsKp9lMwv4tYbNlegQilM7');
 
@@ -66,5 +67,7 @@ class TestCase extends Orchestra\Testbench\TestCase
             'queue'  => 'default',
             'expire' => 60,
         ]);
+
+        $app['config']->set('auth', $auth);
     }
 }
